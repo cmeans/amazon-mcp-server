@@ -2,6 +2,7 @@
 # Build a scraper that can scrape amazon products
 # The scraper should be able to scrape the product name, price, and image
 import httpx
+import sys
 from mcp.server.fastmcp import FastMCP
 import re
 from bs4 import BeautifulSoup
@@ -327,5 +328,5 @@ async def search_products(query: str, max_results: int = 5) -> str:
 
 
 if __name__ == "__main__":
-    print("Starting Amazon Products MCP server...")
+    print("Starting Amazon Products MCP server...", file=sys.stderr)
     mcp.run(transport = "stdio") 
